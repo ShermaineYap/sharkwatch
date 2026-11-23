@@ -77,6 +77,11 @@ export function mergeGrounded(model: Extraction, text: string): { x: Extraction;
     overrides.push(`fee_requested: ${x.fee_requested} -> yes`); x.fee_requested = "yes";
   }
   if (g.asks_for_va_login === "yes" && x.asks_for_va_login !== "yes") { overrides.push("asks_for_va_login -> yes"); x.asks_for_va_login = "yes"; }
+  // Post-freeze safety fix (see study/POST_FREEZE.md): a free consultation is a sales step, not free claims help.
+  const t = text.toLowerCase();
+  const freeSalesStep = /free (initial )?(consultation|strategy session|case (evaluation|review)|evaluation|review|account|call)|(completely )?free services available to you/.test(t);
+  const freeHelpClaim = /free of charge|always free|no-cost representation|at no cost to|services are free|help (you )?for free|is free\b/.test(t.replace(/free (initial )?(consultation|strategy session|case (evaluation|review)|evaluation|review|account|call)/g, ""));
+  if (x.fee_requested === "no" && freeSalesStep && !freeHelpClaim) { overrides.push("fee_requested: no -> unknown (a free consultation is not free claims help)"); x.fee_requested = "unknown"; }
   for (const e of g.evidence) if (!x.evidence.some((m) => m.quote === e.quote)) x.evidence.push(e);
   return { x, overrides };
 }

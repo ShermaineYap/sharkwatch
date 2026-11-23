@@ -4,7 +4,7 @@ import type { CheckResult, Verification } from "@/lib/types";
 
 export interface Example { label: string; text: string; source: string }
 
-const WORD: Record<CheckResult["verdict"], string> = { red: "STOP", amber: "CHECK", green: "FREE HELP", insufficient: "NOT ENOUGH" };
+const WORD: Record<CheckResult["verdict"], string> = { red: "STOP", amber: "CHECK", green: "NO FEE", insufficient: "NOT ENOUGH" };
 const KIND: Record<string, string> = { attorney: "VA-accredited attorney", claims_agent: "VA-accredited claims agent", vso_rep: "VA-accredited VSO representative (never charges)" };
 const STATES = "AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA PR RI SC SD TN TX UT VT VA WA WV WI WY".split(" ");
 

@@ -102,6 +102,12 @@ describe("extraction safety", () => {
     }
     expect(extractBaseline("All services are free and at no cost to the Veteran.").fee_requested).toBe("no");
   });
+  it("a free consultation is not free claims help", () => {
+    const t = "Our Claim Experts get clients an increase. Schedule a free consultation today.";
+    expect(mergeGrounded(x({ fee_requested: "no" }), t).x.fee_requested).toBe("unknown");
+    const v = "This is a service the VFW is proud to offer -- FREE OF CHARGE -- to anyone.";
+    expect(mergeGrounded(x({ fee_requested: "no" }), v).x.fee_requested).toBe("no");
+  });
   it("baseline reads the common claim-shark fee wording", () => {
     for (const [t, n] of [["five times the amount of any increase in his monthly VA compensation", 5], ["a fee equal to five months' worth of any benefits increase", 5], ["up to 6x the monthly increase in your VA benefit", 6]] as const) {
       expect(extractBaseline(t).fee_multiple_of_monthly_increase).toBe(n);

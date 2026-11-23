@@ -80,12 +80,15 @@ export default function How() {
 
       <h2>How well it reads real offers</h2>
       <p>We collected short excerpts from real public pages: unaccredited claims consultants&apos; own pricing pages and news reports quoting their contracts, accredited law firms, and free Veterans Service Organizations. Company names are replaced with [COMPANY]. Each excerpt was labelled under a written policy before any model saw it.</p>
-      {dev && <Results d={dev} title="Development set" note="We looked at these results while improving the prompt and adding the grounded fee patterns, so they flatter the final system." />}
-      {held && <Results d={held} title="Held-out set (scored once)" note="New excerpts from different pages, collected and labelled after the design was frozen. This is the honest number." />}
+      {held && <Results d={held} title="Held-out set (scored once)" note="New excerpts from different pages, collected and labelled after a public design-freeze commit, then scored once. This is the honest number. It is a small set with many plain free-help pages, so treat it as encouraging, not proof." />}
+      {dev && <Results d={dev} title="Development set" note="We looked at these results while improving the system, so they flatter it. Scored with the final code, including one safety fix made after the freeze (below)." />}
       {!dev && !held && <p>Study results are being generated.</p>}
 
       <h2>What we learned</h2>
-      <p>The first version asked a small Gemma model to do everything. It often filed &ldquo;5x your monthly increase&rdquo; under &ldquo;percent of back pay&rdquo;, which hides exactly the billing model claim sharks use. Defining each choice in the prompt helped. Letting exact fee wording override the model helped more. Gemma still does what keyword rules cannot: reading names, roles, claim stage and indirect wording.</p>
+      <p>The first version of the prompt made the small Gemma model file &ldquo;5x your monthly increase&rdquo; under &ldquo;percent of back pay&rdquo;, which hides exactly the billing model claim sharks use. It caught 5 of 8 claim-shark texts, fewer than plain keyword rules. Defining every choice in the prompt fixed most of that: Gemma then caught all of them, and beat keyword rules clearly on new text, because it reads indirect wording, roles and claim stage. Exact-wording overrides now act as a safety net.</p>
+
+      <h2>The one change after the freeze</h2>
+      <p>On the development set, 3 of 11 unaccredited companies that advertise a &ldquo;free consultation&rdquo; came out as free help. That is the worst mistake this tool can make, so after scoring the held-out set we changed the design. A free consultation now counts as a sales step, not free claims help, and the green result now says &ldquo;No fee&rdquo; rather than &ldquo;Free help&rdquo;. Afterwards, 0 of 11 unaccredited texts in development and 0 of 5 in held-out came out green, and no held-out verdict changed.</p>
 
       <h2>Limits</h2>
       <ul>

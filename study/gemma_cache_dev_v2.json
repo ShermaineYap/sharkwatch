@@ -226,5 +226,711 @@
    ]
   },
   "ms": 32428
+ },
+ "4db5042b352b28d0": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": null
+    }
+   ],
+   "organizations": [
+    "VSOs"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "yes",
+   "fee_requested": "unknown",
+   "fee_basis": "unknown",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "no",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "no",
+   "pressure_tactics": [
+    "I felt their fee was absolutely worth it"
+   ],
+   "evidence": [
+    {
+     "field": "fee_requested",
+     "quote": "I would much rather pay to receive better service."
+    },
+    {
+     "field": "claims_to_be_vso",
+     "quote": "I get that VSOs will do this for free"
+    }
+   ]
+  },
+  "ms": 28745
+ },
+ "72f3d5969396fabe": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": null
+    }
+   ],
+   "organizations": [
+    "VA"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "unknown",
+   "fee_requested": "unknown",
+   "fee_basis": "unknown",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": 20000,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "no",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "automatically sends a bill",
+    "starts calling to collect"
+   ],
+   "evidence": [
+    {
+     "field": "fee_flat_usd",
+     "quote": "sometimes for as much as $20,000"
+    }
+   ]
+  },
+  "ms": 24056
+ },
+ "f8b8d50f618b54d8": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": "Claim Experts"
+    }
+   ],
+   "organizations": [],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "unknown",
+   "fee_requested": "no",
+   "fee_basis": "none",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "no",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "no",
+   "pressure_tactics": [
+    "90% success rate"
+   ],
+   "evidence": [
+    {
+     "field": "pressure_tactics",
+     "quote": "Our highly trained Claim Experts have a 90% success rate in getting our clients an increase because of our tailored approach."
+    },
+    {
+     "field": "fee_requested",
+     "quote": "Schedule a free consultation today."
+    }
+   ]
+  },
+  "ms": 26683
+ },
+ "648a0e79d91ac2d1": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": null
+    }
+   ],
+   "organizations": [
+    "VA"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "no",
+   "fee_requested": "no",
+   "fee_basis": "none",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "no",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "no",
+   "pressure_tactics": [
+    "increase their VA ratings"
+   ],
+   "evidence": [
+    {
+     "field": "description",
+     "quote": "[COMPANY] provides coaching services tailored to the needs and circumstances of Veterans with the aim to increase their VA ratings."
+    },
+    {
+     "field": "fee_requested",
+     "quote": "Book a free strategy session here."
+    }
+   ]
+  },
+  "ms": 25659
+ },
+ "0e796ef0bc19d53f": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": null
+    }
+   ],
+   "organizations": [
+    "Veterans Administration"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "no",
+   "fee_requested": "no",
+   "fee_basis": "none",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "no",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "no",
+   "pressure_tactics": [],
+   "evidence": [
+    {
+     "field": "evidence",
+     "quote": "There are completely free services available to you to support the filing of claims for VA benefits."
+    }
+   ]
+  },
+  "ms": 22986
+ },
+ "b5d97743ddc1249e": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": null
+    }
+   ],
+   "organizations": [
+    "[FIRM]"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "no",
+   "fee_requested": "no",
+   "fee_basis": "none",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "no",
+   "claim_stage": "initial_claim",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "Federal law prohibits representatives from entering into a fee agreement for helping with an initial VA claim"
+   ],
+   "evidence": [
+    {
+     "field": "fee_requested",
+     "quote": "when we do it's always free of charge"
+    }
+   ]
+  },
+  "ms": 23543
+ },
+ "a5cb5cd5d9be150a": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": "VA disability attorney"
+    }
+   ],
+   "organizations": [
+    "VA"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "no",
+   "fee_requested": "unknown",
+   "fee_basis": "percent_of_past_due",
+   "fee_percent_of_past_due": "20",
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "no",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "contingency fee that does not exceed 20% of past-due benefits shall be presumed as reasonable",
+    "contingency fee that exceeds 33.33% of past-due benefits shall be presumed to be unreasonable"
+   ],
+   "evidence": [
+    {
+     "field": "fee_basis",
+     "quote": "A contingency fee that does not exceed 20% of past-due benefits shall be presumed as reasonable."
+    },
+    {
+     "field": "fee_basis",
+     "quote": "a contingency fee that exceeds 33.33% of past-due benefits shall be presumed to be unreasonable."
+    },
+    {
+     "field": "fee_basis",
+     "quote": "That means a reasonable VA disability attorney cost is usually between 20% and 33.33% of any awarded past-due benefits they win in your case."
+    }
+   ]
+  },
+  "ms": 39028
+ },
+ "4fa74d913db4f08e": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": "attorneys and claims advocates"
+    }
+   ],
+   "organizations": [],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "no",
+   "fee_requested": "yes",
+   "fee_basis": "percent_of_past_due",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "no",
+   "claim_stage": "supplemental_or_appeal",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "charge a fee for their representation"
+   ],
+   "evidence": [
+    {
+     "field": "fee_requested",
+     "quote": "attorneys and claims advocates may charge a fee for their representation"
+    },
+    {
+     "field": "fee_basis",
+     "quote": "Typically, accredited veterans' advocates charge a contingency fee based on retroactive benefits recovered"
+    }
+   ]
+  },
+  "ms": 27177
+ },
+ "191ccc0b59c6a1d0": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": "Brian",
+     "last_name": "Hill",
+     "role_claimed": "staff"
+    }
+   ],
+   "organizations": [
+    "VA"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "no",
+   "fee_requested": "no",
+   "fee_basis": "none",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "no",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "no fee unless we win!"
+   ],
+   "evidence": [
+    {
+     "field": "people",
+     "quote": "Brian Hill and his staff"
+    },
+    {
+     "field": "organizations",
+     "quote": "VA"
+    },
+    {
+     "field": "fee_requested",
+     "quote": "no fee unless we win!"
+    }
+   ]
+  },
+  "ms": 26679
+ },
+ "7e47a33e7cd65169": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": "claims agents and attorneys"
+    }
+   ],
+   "organizations": [
+    "VA"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "unknown",
+   "fee_requested": "yes",
+   "fee_basis": "unknown",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "unknown",
+   "claim_stage": "supplemental_or_appeal",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "charge a cost for their representation"
+   ],
+   "evidence": [
+    {
+     "field": "fee_requested",
+     "quote": "claims agents and attorneys can charge a cost for their representation"
+    }
+   ]
+  },
+  "ms": 23326
+ },
+ "a99c0ec071ee865f": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": "Robert",
+     "last_name": "Chisholm",
+     "role_claimed": "attorney"
+    },
+    {
+     "first_name": "Zachary",
+     "last_name": "Stolz",
+     "role_claimed": "attorney"
+    }
+   ],
+   "organizations": [
+    "[FIRM]"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [
+    "RI"
+   ],
+   "claims_accredited": "yes",
+   "claims_to_be_vso": "no",
+   "fee_requested": "unknown",
+   "fee_basis": "unknown",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "unknown",
+   "claim_stage": "supplemental_or_appeal",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [],
+   "evidence": [
+    {
+     "field": "people",
+     "quote": "Attorneys Robert Chisholm and Zachary Stolz of [FIRM] in Providence, RI."
+    },
+    {
+     "field": "claims_accredited",
+     "quote": "VA-accredited attorneys"
+    }
+   ]
+  },
+  "ms": 29543
+ },
+ "6b419a8f21cb4903": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": "Service Officers"
+    }
+   ],
+   "organizations": [
+    "VFW"
+   ],
+   "accreditation_numbers": [
+    "VFW Accredited"
+   ],
+   "states_mentioned": [],
+   "claims_accredited": "yes",
+   "claims_to_be_vso": "yes",
+   "fee_requested": "no",
+   "fee_basis": "none",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "unknown",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "FREE OF CHARGE"
+   ],
+   "evidence": [
+    {
+     "field": "organizations",
+     "quote": "VFW Accredited Service Officers are with America's veterans every step of the way once they're ready to file a claim."
+    },
+    {
+     "field": "fee_requested",
+     "quote": "This is a service the VFW is proud to offer -- FREE OF CHARGE -- to anyone seeking assistance with the claims process."
+    }
+   ]
+  },
+  "ms": 29236
+ },
+ "447b5d6e473c6b5e": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": "VSO representative"
+    }
+   ],
+   "organizations": [
+    "VSO"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "yes",
+   "claims_to_be_vso": "yes",
+   "fee_requested": "no",
+   "fee_basis": "none",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "unknown",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [],
+   "evidence": [
+    {
+     "field": "claims_accredited",
+     "quote": "An accredited VSO representative can help you gather evidence, file a claim, or request a decision review."
+    },
+    {
+     "field": "fee_requested",
+     "quote": "The services that an accredited VSO representative provides on your VA benefit claim are always free."
+    }
+   ]
+  },
+  "ms": 25548
+ },
+ "debec8aec2430e2b": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": "Service Officers"
+    }
+   ],
+   "organizations": [
+    "VFW"
+   ],
+   "accreditation_numbers": [
+    "VFW Accredited"
+   ],
+   "states_mentioned": [],
+   "claims_accredited": "yes",
+   "claims_to_be_vso": "yes",
+   "fee_requested": "unknown",
+   "fee_basis": "unknown",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "no",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "Don't fall victim to \"claim sharks\""
+   ],
+   "evidence": [
+    {
+     "field": "pressure_tactics",
+     "quote": "Don't fall victim to \"claim sharks\" - companies that illegally represent veterans through the VA claims process and can charge thousands for doing so."
+    },
+    {
+     "field": "claims_to_be_vso",
+     "quote": "VFW Accredited Service Officers are trained experts."
+    }
+   ]
+  },
+  "ms": 28909
+ },
+ "af2f1f81a4f71710": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": null
+    }
+   ],
+   "organizations": [
+    "VA"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "yes",
+   "claims_to_be_vso": "no",
+   "fee_requested": "unknown",
+   "fee_basis": "unknown",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "no",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "permit them to charge fees for their services"
+   ],
+   "evidence": [
+    {
+     "field": "claims_accredited",
+     "quote": "Some VA-accredited attorneys and claims agents provide services for free on initial claims."
+    },
+    {
+     "field": "fee_requested",
+     "quote": "But most accredited attorneys and claims agents offer their services after we've made a decision on your initial claim."
+    },
+    {
+     "field": "fee_basis",
+     "quote": "At this stage in the claims process, we permit them to charge fees for their services."
+    }
+   ]
+  },
+  "ms": 30819
+ },
+ "f8458c2659d2bbae": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": null
+    }
+   ],
+   "organizations": [
+    "VA"
+   ],
+   "accreditation_numbers": [
+    "fully VA accredited"
+   ],
+   "states_mentioned": [
+    null
+   ],
+   "claims_accredited": "yes",
+   "claims_to_be_vso": "unknown",
+   "fee_requested": "yes",
+   "fee_basis": "multiple_of_monthly_increase",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": "5",
+   "written_agreement_mentioned": "unknown",
+   "claim_stage": "increase",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "Get your rating increased fast!"
+   ],
+   "evidence": [
+    {
+     "field": "fee_requested",
+     "quote": "Our fee is just 5x your monthly increase, payable once VA approves."
+    },
+    {
+     "field": "claims_accredited",
+     "quote": "this company is fully VA accredited"
+    }
+   ]
+  },
+  "ms": 27356
+ },
+ "4b80a82cafe1b0a9": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": "Jennifer",
+     "last_name": "Steele",
+     "role_claimed": "VA-accredited claims expert"
+    }
+   ],
+   "organizations": [
+    "VA"
+   ],
+   "accreditation_numbers": [
+    "VA-accredited"
+   ],
+   "states_mentioned": [],
+   "claims_accredited": "yes",
+   "claims_to_be_vso": "no",
+   "fee_requested": "yes",
+   "fee_basis": "upfront_flat",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": 1500,
+   "fee_multiple_of_monthly_increase": null,
+   "written_agreement_mentioned": "unknown",
+   "claim_stage": "initial_claim",
+   "asks_for_va_login": "yes",
+   "pressure_tactics": [
+    "one-time $1,500 fee"
+   ],
+   "evidence": [
+    {
+     "field": "people",
+     "quote": "Hi, this is Jennifer Steele, VA-accredited claims expert."
+    },
+    {
+     "field": "fee_requested",
+     "quote": "I can file your first VA disability claim for you for a one-time $1,500 fee."
+    },
+    {
+     "field": "asks_for_va_login",
+     "quote": "Just send me your VA.gov login so I can upload everything."
+    }
+   ]
+  },
+  "ms": 32277
  }
 }

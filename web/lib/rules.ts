@@ -59,7 +59,7 @@ export function decide(x: Extraction, verifications: Verification[]): { verdict:
     headline = verifiedFeeAllowed ? "Accredited, but check the fee terms first." : "Check a few things before you agree.";
   } else if (x.fee_requested === "no") {
     verdict = "green";
-    headline = "No fee asked. Free help like this is normal.";
+    headline = "This text says the help is free. Free help from accredited VSOs is normal; still confirm who they are.";
   } else {
     verdict = "insufficient";
     headline = "Not enough to check yet. Ask them two questions.";
