@@ -8,6 +8,11 @@ const WORD: Record<CheckResult["verdict"], string> = { red: "STOP", amber: "CHEC
 const KIND: Record<string, string> = { attorney: "VA-accredited attorney", claims_agent: "VA-accredited claims agent", vso_rep: "VA-accredited VSO representative (never charges)" };
 const STATES = "AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA PR RI SC SD TN TX UT VT VA WA WV WI WY".split(" ");
 
+export function prettyDate(iso: string) {
+  const d = new Date(iso + "T00:00:00Z");
+  return isNaN(+d) ? iso : d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+}
+
 function personView(v: Verification, snapshot: string) {
   const c = v.candidates[0];
   const where = (p: { city: string; state: string }) => [p.city, p.state].filter(Boolean).join(", ");
@@ -30,7 +35,8 @@ function personView(v: Verification, snapshot: string) {
 }
 
 function Highlight({ text, quotes }: { text: string; quotes: string[] }) {
-  const qs = quotes.filter((q) => q.length > 3 && text.toLowerCase().includes(q.toLowerCase())).sort((a, b) => b.length - a.length);
+  // Mark only short quotes, so the highlight points at the words that mattered.
+  const qs = quotes.filter((q) => q.length > 3 && q.length <= Math.max(90, text.length * 0.45) && text.toLowerCase().includes(q.toLowerCase())).sort((a, b) => b.length - a.length);
   if (!qs.length) return <>{text}</>;
   const re = new RegExp(`(${qs.map((q) => q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "gi");
   return <>{text.split(re).map((part, i) => (i % 2 ? <mark key={i}>{part}</mark> : <span key={i}>{part}</span>))}</>;
@@ -98,7 +104,7 @@ export default function Checker({ examples }: { examples: Example[] }) {
           <div className="stamp" data-v={res.verdict}>
             <div className="word">{WORD[res.verdict]}</div>
             <p className="headline">{res.headline}</p>
-            <p className="meta">Checked against VA&apos;s accreditation roster of {res.roster.snapshot} and the fee rules in 38 CFR 14.636.</p>
+            <p className="meta">Checked against VA&apos;s accreditation roster of {prettyDate(res.roster.snapshot)} and the fee rules in 38 CFR 14.636.</p>
           </div>
 
           <ol className="checks">
@@ -108,7 +114,7 @@ export default function Checker({ examples }: { examples: Example[] }) {
                 <p>No person or accreditation number to check. Companies are not listed in VA&apos;s roster, only people are. Ask for the name and accreditation number of the person who will work on your claim.</p>
               )}
               {res.verifications.map((v, i) => {
-                const p = personView(v, res.roster.snapshot);
+                const p = personView(v, prettyDate(res.roster.snapshot));
                 return (
                   <div className="person" data-s={p.s} key={i}>
                     <strong>{p.title}</strong>

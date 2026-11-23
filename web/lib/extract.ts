@@ -73,7 +73,9 @@ export function mergeGrounded(model: Extraction, text: string): { x: Extraction;
   for (const k of ["fee_multiple_of_monthly_increase", "fee_percent_of_past_due", "fee_flat_usd"] as const) {
     if (g[k] !== null && g[k] !== x[k]) { overrides.push(`${k}: ${x[k]} -> ${g[k]}`); x[k] = g[k]; }
   }
-  if (g.fee_basis !== "unknown" && x.fee_requested !== "yes") { overrides.push(`fee_requested: ${x.fee_requested} -> yes`); x.fee_requested = "yes"; }
+  if ((g.fee_basis !== "unknown" || (g.fee_requested === "yes" && g.evidence.some((e) => e.field === "fee_requested"))) && x.fee_requested !== "yes") {
+    overrides.push(`fee_requested: ${x.fee_requested} -> yes`); x.fee_requested = "yes";
+  }
   if (g.asks_for_va_login === "yes" && x.asks_for_va_login !== "yes") { overrides.push("asks_for_va_login -> yes"); x.asks_for_va_login = "yes"; }
   for (const e of g.evidence) if (!x.evidence.some((m) => m.quote === e.quote)) x.evidence.push(e);
   return { x, overrides };
@@ -99,8 +101,11 @@ export function extractBaseline(text: string): Extraction {
   if (pct && x.fee_basis === "unknown") { x.fee_basis = "percent_of_past_due"; x.fee_percent_of_past_due = Number(pct[1]); x.fee_requested = "yes"; }
   const flat = text.match(/\$\s?([\d,]{3,})(?:\.\d\d)?\s*(?:one[- ]time\s+)?(?:fee|upfront|flat)|(?:one[- ]time|flat|upfront)\s+\$\s?([\d,]{3,})/i);
   if (flat && x.fee_basis === "unknown") { x.fee_basis = "upfront_flat"; x.fee_flat_usd = Number((flat[1] ?? flat[2]).replace(/,/g, "")); x.fee_requested = "yes"; }
-  if (x.fee_requested === "unknown" && /\b(our|my|the|their|a)\s+(standard\s+|membership\s+|consulting\s+)?fee\b|\bbill(ed|s)?\b|\bpay (us|me|the company)\b|\bcontingency fee\b|no fee unless we win/.test(t)) x.fee_requested = "yes";
-  if (/free of charge|always free|at no cost|no charge|for free\b/.test(t) && x.fee_requested !== "yes") x.fee_requested = "no";
+  // Contingency wording ("no fee unless we win", "only pay if your rating goes up") means a fee when successful.
+  const contingent = /no fee unless (we|you) win|if we do not win[^.]{0,40}no fee|(only|you) pay (the fee )?(only )?if (you|we) win|you only pay if|only pay (after|when|if)/.test(t);
+  if (contingent) { x.fee_requested = "yes"; ev("fee_requested", /no fee unless (we|you) win|if we do not win[^.]{0,40}no fee|(only|you) pay (the fee )?(only )?if (you|we) win|you only pay if[^.]{0,40}|only pay (after|when|if)[^.]{0,40}/i); }
+  if (x.fee_requested === "unknown" && /\b(our|my|the|their|a)\s+(standard\s+|membership\s+|consulting\s+)?fee\b|\bbill(ed|s)?\b|\bpay (us|me|the company)\b|\bcontingency fee\b/.test(t)) x.fee_requested = "yes";
+  if (/free of charge|always free|at no cost|no charge|for free\b|services are free|no-cost/.test(t) && x.fee_requested !== "yes") x.fee_requested = "no";
 
   if (/first (va )?(disability )?claim|initial (va )?claim|file (your|a) (first|new) claim/.test(t)) x.claim_stage = "initial_claim";
   else if (/appeal|higher[- ]level review|supplemental|after (an |the )?initial|decision on (your|the veteran'?s) initial/.test(t)) x.claim_stage = "supplemental_or_appeal";

@@ -1,0 +1,230 @@
+{
+ "717af9b3214311e4": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": "Coaching company"
+    }
+   ],
+   "organizations": [
+    "VA"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "no",
+   "fee_requested": "yes",
+   "fee_basis": "multiple_of_monthly_increase",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": "6",
+   "written_agreement_mentioned": "unknown",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "exploring eligibility for increased VA disability benefits"
+   ],
+   "evidence": [
+    {
+     "field": "fee_basis",
+     "quote": "our standard fee is six times (6x) the monthly increase"
+    }
+   ]
+  },
+  "ms": 30023
+ },
+ "43835e86ef65214a": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": null
+    }
+   ],
+   "organizations": [],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "unknown",
+   "fee_requested": "yes",
+   "fee_basis": "multiple_of_monthly_increase",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": "5400",
+   "fee_multiple_of_monthly_increase": "6",
+   "written_agreement_mentioned": "no",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "discount"
+   ],
+   "evidence": [
+    {
+     "field": "fee_basis",
+     "quote": "your membership fee would be 6x the monthly increase"
+    },
+    {
+     "field": "fee_flat_usd",
+     "quote": "the total owed would be $6,000-$600 (10% discount) = $5,400"
+    }
+   ]
+  },
+  "ms": 29062
+ },
+ "c989b018c7f3accd": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": null
+    }
+   ],
+   "organizations": [
+    "COMPANY"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "unknown",
+   "fee_requested": "unknown",
+   "fee_basis": "multiple_of_monthly_increase",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": "5",
+   "written_agreement_mentioned": "yes",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "The contract said he would pay [COMPANY] the equivalent of five times the amount of any increase in his monthly VA compensation."
+   ],
+   "evidence": [
+    {
+     "field": "written_agreement_mentioned",
+     "quote": "The contract said he would pay [COMPANY] the equivalent of five times the amount of any increase in his monthly VA compensation."
+    }
+   ]
+  },
+  "ms": 26326
+ },
+ "64ae0a1116a60f28": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": null
+    }
+   ],
+   "organizations": [
+    null
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "unknown",
+   "fee_requested": "yes",
+   "fee_basis": "multiple_of_monthly_increase",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": "5",
+   "written_agreement_mentioned": "no",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "You only pay the company if your monthly check from VA goes up"
+   ],
+   "evidence": [
+    {
+     "field": "fee_basis",
+     "quote": "You only pay the company if your monthly check from VA goes up, and then they charge five times that increase."
+    }
+   ]
+  },
+  "ms": 26714
+ },
+ "04f99805b07be263": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": null
+    }
+   ],
+   "organizations": [
+    "VA"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "unknown",
+   "fee_requested": "yes",
+   "fee_basis": "multiple_of_monthly_increase",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": "5",
+   "written_agreement_mentioned": "unknown",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "charges clients a fee"
+   ],
+   "evidence": [
+    {
+     "field": "fee_requested",
+     "quote": "VA Claim Consulting charges clients a fee equal to five months' worth of any benefits increase they receive."
+    }
+   ]
+  },
+  "ms": 36034
+ },
+ "4f8940bc5fe2af01": {
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)",
+  "raw": {
+   "people": [
+    {
+     "first_name": null,
+     "last_name": null,
+     "role_claimed": null
+    }
+   ],
+   "organizations": [
+    "Air Force"
+   ],
+   "accreditation_numbers": [],
+   "states_mentioned": [],
+   "claims_accredited": "unknown",
+   "claims_to_be_vso": "unknown",
+   "fee_requested": "yes",
+   "fee_basis": "multiple_of_monthly_increase",
+   "fee_percent_of_past_due": null,
+   "fee_flat_usd": null,
+   "fee_multiple_of_monthly_increase": "5",
+   "written_agreement_mentioned": "unknown",
+   "claim_stage": "unknown",
+   "asks_for_va_login": "unknown",
+   "pressure_tactics": [
+    "charged an Air Force veteran a fee of more than $7,000"
+   ],
+   "evidence": [
+    {
+     "field": "fee_requested",
+     "quote": "charged an Air Force veteran a fee of more than $7,000"
+    },
+    {
+     "field": "fee_basis",
+     "quote": "five times the increase in his monthly disability benefits"
+    }
+   ]
+  },
+  "ms": 32428
+ }
+}

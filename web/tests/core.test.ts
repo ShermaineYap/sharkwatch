@@ -95,6 +95,13 @@ describe("extraction safety", () => {
     expect(m.fee_multiple_of_monthly_increase).toBe(5);
     expect(overrides.length).toBeGreaterThan(0);
   });
+  it("contingency wording is a fee, not free help", () => {
+    for (const t of ["Let us fight for your benefits - no fee unless we win!", "You only pay if your VA pay goes up."]) {
+      expect(extractBaseline(t).fee_requested).toBe("yes");
+      expect(mergeGrounded(x({ fee_requested: "no" }), t).x.fee_requested).toBe("yes");
+    }
+    expect(extractBaseline("All services are free and at no cost to the Veteran.").fee_requested).toBe("no");
+  });
   it("baseline reads the common claim-shark fee wording", () => {
     for (const [t, n] of [["five times the amount of any increase in his monthly VA compensation", 5], ["a fee equal to five months' worth of any benefits increase", 5], ["up to 6x the monthly increase in your VA benefit", 6]] as const) {
       expect(extractBaseline(t).fee_multiple_of_monthly_increase).toBe(n);
