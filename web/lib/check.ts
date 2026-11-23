@@ -15,6 +15,18 @@ export function store(): RosterStore {
   return snowflakeConfigured() ? new SnowflakeStore() : snapshotStore();
 }
 
+// Recognized Veterans Service Organizations named in the text (display only; never changes the verdict,
+// because a claims company can name a VSO it is not part of).
+const ALIASES: Record<string, string> = { vfw: "Veterans of Foreign Wars", dav: "Disabled American Veterans", "american legion": "American Legion", amvets: "AMVETS", "paralyzed veterans": "Paralyzed Veterans of America", "vietnam veterans of america": "Vietnam Veterans of America", "military order of the purple heart": "Military Order of the Purple Heart" };
+export function recognizedOrgs(text: string): string[] {
+  const t = text.toLowerCase();
+  const names = (rosterData as { orgs?: string[] }).orgs ?? [];
+  const found = new Set<string>();
+  for (const [k, v] of Object.entries(ALIASES)) if (new RegExp(`\\b${k}\\b`).test(t) && names.some((n) => n.toLowerCase().includes(v.toLowerCase()))) found.add(names.find((n) => n.toLowerCase().includes(v.toLowerCase()))!);
+  for (const n of names) if (n.length > 12 && t.includes(n.toLowerCase())) found.add(n);
+  return [...found].slice(0, 3);
+}
+
 export interface CheckInput {
   text: string;
   name?: string;
@@ -79,5 +91,5 @@ export async function runCheck(input: CheckInput): Promise<CheckResult> {
 
   // 3. Decide with fixed rules (the model never decides).
   const { verdict, headline, flags } = decide(x, verifications);
-  return { verdict, headline, flags, verifications, extraction: x, extractor, roster, freeHelp };
+  return { verdict, headline, flags, verifications, extraction: x, extractor, roster, freeHelp, recognizedOrgs: recognizedOrgs(text) };
 }

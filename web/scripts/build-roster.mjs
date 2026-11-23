@@ -50,7 +50,8 @@ for (const [s, orgs] of Object.entries(byState)) {
     .map((o) => ({ name: o.name, reps: o.reps, phone: o.phone, cities: [...o.cities].slice(0, 4) }));
 }
 
+const orgs = [...new Set(orgRows.map((r) => r.organization_name).filter(Boolean))].sort();
 const snapshot = parseCsv("attorneys.csv")[0]?.snapshot_date ?? "unknown";
 fs.mkdirSync(path.dirname(out), { recursive: true });
-fs.writeFileSync(out, JSON.stringify({ snapshot, source: "https://www.va.gov/ogc/apps/accreditation/", people, freeHelp }));
-console.log(`people=${people.length} states=${Object.keys(freeHelp).length} snapshot=${snapshot} -> ${out}`);
+fs.writeFileSync(out, JSON.stringify({ snapshot, source: "https://www.va.gov/ogc/apps/accreditation/", people, freeHelp, orgs }));
+console.log(`orgs=${orgs.length} people=${people.length} states=${Object.keys(freeHelp).length} snapshot=${snapshot} -> ${out}`);

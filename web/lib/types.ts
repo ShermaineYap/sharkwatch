@@ -87,4 +87,5 @@ export interface CheckResult {
   extractor: { name: string; model: string | null; ms: number; cached: boolean; overrides?: string[] };
   roster: { store: string; snapshot: string; ms: number };
   freeHelp: { state: string | null; orgs: FreeHelpOrg[] };
+  recognizedOrgs: string[];
 }

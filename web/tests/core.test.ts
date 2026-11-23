@@ -4,6 +4,7 @@ import { jaroWinkler, normName, SnapshotStore, verify } from "../lib/roster";
 import { decide } from "../lib/rules";
 import { EMPTY, extractBaseline, mergeGrounded, sanitize } from "../lib/extract";
 import type { Extraction } from "../lib/types";
+import { recognizedOrgs } from "../lib/check";
 
 const store = new SnapshotStore(roster as never);
 const x = (o: Partial<Extraction>): Extraction => ({ ...structuredClone(EMPTY), ...o });
@@ -112,5 +113,13 @@ describe("extraction safety", () => {
     for (const [t, n] of [["five times the amount of any increase in his monthly VA compensation", 5], ["a fee equal to five months' worth of any benefits increase", 5], ["up to 6x the monthly increase in your VA benefit", 6]] as const) {
       expect(extractBaseline(t).fee_multiple_of_monthly_increase).toBe(n);
     }
+  });
+});
+
+describe("recognized Veterans Service Organizations", () => {
+  it("finds VFW and the American Legion by name or short name", () => {
+    expect(recognizedOrgs("A service the VFW is proud to offer")).toContain("Veterans of Foreign Wars");
+    expect(recognizedOrgs("Accredited American Legion service officers")).toContain("American Legion");
+    expect(recognizedOrgs("We are a coaching company")).toEqual([]);
   });
 });

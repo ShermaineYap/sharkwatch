@@ -110,8 +110,14 @@ export default function Checker({ examples }: { examples: Example[] }) {
           <ol className="checks">
             <li>
               <h3>Who is offering help?</h3>
-              {res.verifications.length === 0 && (
-                <p>No person or accreditation number to check. Companies are not listed in VA&apos;s roster, only people are. Ask for the name and accreditation number of the person who will work on your claim.</p>
+              {res.recognizedOrgs.length > 0 && (
+                <div className="person" data-s="ok">
+                  <strong>{res.recognizedOrgs.join(", ")}: VA-recognized Veterans Service Organization</strong>
+                  <p>Its accredited representatives help with claims for free. Make sure the person you deal with really works for it: ask for their name and accreditation number.</p>
+                </div>
+              )}
+              {res.verifications.length === 0 && res.recognizedOrgs.length === 0 && (
+                <p>No person or accreditation number to check. VA&apos;s roster lists people and Veterans Service Organizations, not companies. Ask for the name and accreditation number of the person who will work on your claim.</p>
               )}
               {res.verifications.map((v, i) => {
                 const p = personView(v, prettyDate(res.roster.snapshot));
