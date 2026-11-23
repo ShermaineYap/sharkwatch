@@ -39,14 +39,28 @@ Details: [`DAY1_FINDINGS.md`](DAY1_FINDINGS.md).
 
 ## Measured study
 
-See [`study/`](study/) and the app's "How it works and how well" page. Real public text only (company names replaced with `[COMPANY]`), labelled under a fixed [policy](study/LABEL_POLICY.md) before any model run, plus a held-out set scored once.
+Real public text only (company names replaced with `[COMPANY]`), labelled under a fixed [policy](study/LABEL_POLICY.md) before any model run.
+
+**Held-out set** (19 new excerpts, scored once after the public design-freeze commit `dadbc33`):
+
+| | Verdict correct | Claim-shark texts caught | Legitimate texts wrongly red |
+|---|---|---|---|
+| Gemma alone | 94.7% | 4 of 4 | 0 of 13 |
+| Keyword rules alone | 73.7% | 2 of 4 | 0 of 13 |
+| **SharkWatch** | **94.7%** | **4 of 4** | **0 of 13** |
+
+**Development set** (23 excerpts, seen while improving): 87.0% verdicts correct, 8 of 8 claim-shark texts caught, 0 of 10 legitimate texts wrongly red. Gemma 4 E2B (Q4_0, llama.cpp, 2-core CPU) returned valid JSON 42 of 42 times, median about 26 s per text.
+
+One design change was made after the freeze, to stop "free consultation" offers from unaccredited companies being shown as free help: see [`study/POST_FREEZE.md`](study/POST_FREEZE.md). It changed no held-out verdict.
+
+Reproduce: `python3 scripts/run_gemma_study.py study/heldout.jsonl <cache> <runs>` then `cd web && npx tsx scripts/score-study.ts ../study/heldout.jsonl <out> <cache> <runs>`.
 
 ## Run it
 
 ```bash
 cd web
 npm install
-npm test            # 17 unit tests: rules, verification ladder, extraction safety
+npm test            # 20 unit tests: rules, verification ladder, extraction safety
 npm run dev         # http://localhost:3000
 ```
 
@@ -61,7 +75,7 @@ To refresh the roster: `python3 scripts/parse_rosters.py <raw> data_snapshot_<da
 - Companies are not in VA's roster; only people are. If a text names only a company, SharkWatch can only say so and tell you what to ask.
 - A name match is not identity: someone can use a real accredited person's name. The accreditation number is the strong check, and even that should be confirmed on VA's site.
 - The roster snapshot is dated; VA refreshes it three times a week.
-- The study is small and single-annotator, and its labels were written by the author.
+- The study is small (42 excerpts) and single-annotator; the labels were written by the author.
 - Fee rules here are federal only. Some states have their own laws on claims consultants.
 - Not legal advice.
 

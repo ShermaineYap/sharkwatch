@@ -33,13 +33,13 @@ const C = pres.SchemeColor;
 pres.defineSlideMaster({
   title: "DARK",
   background: { color: C.text1 },
-  objects: [{ placeholder: { options: { name: "title", type: "title", x: 0.6, y: 1.5, w: 8.8, h: 1.4, fontSize: 40, bold: true, color: C.background1, valign: "bottom", margin: 0 }, text: "" } },
+  objects: [{ placeholder: { options: { name: "title", type: "title", x: 0.6, y: 1.5, w: 8.8, h: 1.4, fontSize: 40, bold: true, color: C.background1, align: "left", valign: "bottom", margin: 0 }, text: "" } },
             { placeholder: { options: { name: "body", type: "body", x: 0.6, y: 3.05, w: 8.8, h: 1.6, fontSize: 18, color: C.background2, valign: "top", margin: 0 }, text: "" } }],
 });
 pres.defineSlideMaster({
   title: "LIGHT",
   background: { color: C.background2 },
-  objects: [{ placeholder: { options: { name: "title", type: "title", x: 0.6, y: 0.35, w: 8.8, h: 0.8, fontSize: 28, bold: true, color: C.text1, valign: "top", margin: 0 }, text: "" } }],
+  objects: [{ placeholder: { options: { name: "title", type: "title", x: 0.6, y: 0.35, w: 8.8, h: 0.75, fontSize: 24, bold: true, color: C.text1, align: "left", valign: "top", margin: 0 }, text: "" } }],
   slideNumber: { x: 9.2, y: 5.2, w: 0.5, h: 0.3, fontSize: 10, color: "4A5A6A" },
 });
 
@@ -57,7 +57,7 @@ s.addNotes("I built SharkWatch, a tool that checks a VA claims helper before a v
 // 2. Problem
 pres.addSection({ title: "Problem" });
 s = pres.addSlide({ masterName: "LIGHT", sectionTitle: "Problem" });
-s.addText("Filing a VA claim is free. Claim sharks charge thousands anyway", { placeholder: "title" });
+s.addText("Filing a VA claim is free. Claim sharks charge anyway", { placeholder: "title" });
 const stats = [
   ["$5,000+", "what unaccredited \"claim sharks\" usually charge for a claim that is free to file", "Kansas Legislative Research Dept., 2026"],
   ["5x-6x", "the typical fee: five or six times the veteran's monthly increase, from their own pricing pages", "Company pricing pages; KFF Health News"],
@@ -75,7 +75,7 @@ s.addNotes("Only VA-accredited attorneys and agents may charge, and never for a 
 
 // 3. Gap
 s = pres.addSlide({ masterName: "LIGHT", sectionTitle: "Problem" });
-s.addText("VA's own search only takes a name. Veterans receive ads and contracts", { placeholder: "title" });
+s.addText("VA's search takes a name. Veterans get ads and contracts", { placeholder: "title" });
 const gap = [
   ["Can't read an offer", "A veteran has an ad, a text or a contract, not a clean name to type in."],
   ["Lists people, not companies", "The VA roster names 14,654 attorneys, agents and VSO reps. No company names."],
@@ -106,15 +106,15 @@ steps.forEach(([h, b], i) => {
   s.addShape(pres.shapes.OVAL, { x, y: 1.5, w: 0.55, h: 0.55, fill: { color: C.text1 }, line: { color: C.text1 }, objectName: `step ${i + 1}` });
   T(s, String(i + 1), { x, y: 1.5, w: 0.55, h: 0.55, fontSize: 18, bold: true, color: C.background1, align: "center", valign: "middle" });
   if (i < 3) s.addShape(pres.shapes.LINE, { x: x + 0.65, y: 1.775, w: 1.5, h: 0, line: { color: HEX.accent5, width: 1.5, endArrowType: "triangle" }, objectName: `arrow ${i + 1}` });
-  T(s, h, { x, y: 2.25, w: 2.05, h: 0.45, fontSize: 16, bold: true });
-  T(s, b, { x, y: 2.75, w: 2.05, h: 1.9, fontSize: 14, valign: "top" });
+  T(s, h, { x, y: 2.25, w: 2.05, h: 0.6, fontSize: 16, bold: true, valign: "top" });
+  T(s, b, { x, y: 2.9, w: 2.05, h: 1.8, fontSize: 14, valign: "top" });
 });
-T(s, "Four verdicts: STOP for a concrete rule breach, CHECK to verify first, FREE HELP when no fee is asked, and NOT ENOUGH with two questions to ask.", { x: 0.6, y: 4.85, w: 8.8, h: 0.4, fontSize: 12, color: "4A5A6A" });
+T(s, "Four verdicts: STOP for a concrete rule breach, CHECK to verify first, NO FEE when the text says the help is free, and NOT ENOUGH with two questions to ask.", { x: 0.6, y: 4.85, w: 8.8, h: 0.4, fontSize: 12, color: "4A5A6A" });
 
 // 5. Headline finding
 pres.addSection({ title: "Evidence" });
 s = pres.addSlide({ masterName: "LIGHT", sectionTitle: "Evidence" });
-s.addText("A similar name is not proof, so it is never called accredited", { placeholder: "title" });
+s.addText("A similar name is not proof, so it is never verified", { placeholder: "title" });
 s.addChart(pres.charts.LINE, [
   { name: "Real names with a typo found", labels: ["90", "94", "96", "98"], values: [100, 94, 86, 60] },
   { name: "Made-up names wrongly found", labels: ["90", "94", "96", "98"], values: [60.5, 12, 4, 1] },
@@ -137,16 +137,16 @@ T(s, [
 
 // 6. Demo screens
 s = pres.addSlide({ masterName: "LIGHT", sectionTitle: "Evidence" });
-s.addText("Built for a phone, a worried veteran and 18-point text", { placeholder: "title" });
-[["phone_stop.png", "Fake \"claims expert\": STOP"], ["phone_check.png", "Accredited law firm: CHECK"], ["phone_free.png", "VFW page: FREE HELP"]].forEach(([f, cap], i) => {
+s.addText("Built for a phone and a worried veteran", { placeholder: "title" });
+[["phone_stop.png", "Fake \"claims expert\": STOP"], ["phone_check.png", "Accredited law firm: CHECK"], ["phone_free.png", "VFW page: NO FEE"]].forEach(([f, cap], i) => {
   const x = 0.9 + i * 2.95;
-  if (fs.existsSync(path.join(shots, f))) s.addImage({ path: path.join(shots, f), x, y: 1.25, w: 2.2, h: 3.5, sizing: { type: "crop", w: 2.2, h: 3.5 }, altText: cap, objectName: `screen ${i + 1}` });
+  if (fs.existsSync(path.join(shots, f))) s.addImage({ path: path.join(shots, f), x: x + 0.22, y: 1.2, w: 1.76, h: 3.48, altText: cap, objectName: `screen ${i + 1}` });
   T(s, cap, { x, y: 4.85, w: 2.2, h: 0.35, fontSize: 12, align: "center", color: "4A5A6A" });
 });
 
 // 7. Results
 s = pres.addSlide({ masterName: "LIGHT", sectionTitle: "Evidence" });
-s.addText("Measured on real public text, with a held-out set scored once", { placeholder: "title" });
+s.addText("Measured on real public text, held-out set scored once", { placeholder: "title" });
 const pctTxt = (v) => `${v}%`;
 const rows = [
   [{ text: "", options: { bold: true } }, { text: "Held-out: verdict correct", options: { bold: true } }, { text: "Held-out: sharks caught", options: { bold: true } }, { text: "Held-out: legit wrongly red", options: { bold: true } }, { text: "Dev: verdict correct", options: { bold: true } }],

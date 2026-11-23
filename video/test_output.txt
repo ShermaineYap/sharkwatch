@@ -1,0 +1,22 @@
+ ✓ jaroWinkler (Snowflake 0-100 scale) > matches known values
+ ✓ verification ladder > verifies by accreditation number
+ ✓ verification ladder > rejects a number that belongs to someone else
+ ✓ verification ladder > exact name + state is found; name in the wrong state is only a name match
+ ✓ verification ladder > a near-identical made-up name is never verified
+ ✓ verification ladder > normalises accents, case and punctuation
+ ✓ rules (38 CFR 14.636) > multiple of monthly increase from an unverified helper is red
+ ✓ rules (38 CFR 14.636) > a fee for a first claim is red even from a verified attorney
+ ✓ rules (38 CFR 14.636) > 20% of past-due from a verified attorney after a decision is amber (check terms), not red
+ ✓ rules (38 CFR 14.636) > above 33 1/3% is red, 25% is amber
+ ✓ rules (38 CFR 14.636) > a VSO asking for money is red
+ ✓ rules (38 CFR 14.636) > asking for VA.gov login is red
+ ✓ rules (38 CFR 14.636) > free help is green; silence is insufficient
+ ✓ extraction safety > drops names and quotes the model invented
+ ✓ extraction safety > coerces off-schema values to unknown and parses numbers like 6x
+ ✓ extraction safety > grounded patterns override the model on explicit fee arithmetic
+ ✓ extraction safety > contingency wording is a fee, not free help
+ ✓ extraction safety > a free consultation is not free claims help
+ ✓ extraction safety > baseline reads the common claim-shark fee wording
+ ✓ recognized Veterans Service Organizations > finds VFW and the American Legion by name or short name
+ Test Files  1 passed (1)
+      Tests  20 passed (20)

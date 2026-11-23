@@ -97,7 +97,7 @@ export class SnowflakeStore implements RosterStore {
     const rows = await sql(
       `SELECT ORGANIZATION_NAME, COUNT(*) AS REPS, ANY_VALUE(ORG_PHONE),
               ARRAY_TO_STRING(ARRAY_SLICE(ARRAY_UNIQUE_AGG(REP_CITY), 0, 4), '|')
-       FROM VSO_ORG_REPS WHERE REP_STATE = ? GROUP BY ORGANIZATION_NAME ORDER BY REPS DESC LIMIT 8`,
+       FROM VSO_ORG_REPS WHERE COALESCE(REP_STATE, ORG_STATE) = ? GROUP BY ORGANIZATION_NAME ORDER BY REPS DESC LIMIT 8`,
       [state.toUpperCase()],
     );
     return rows.map((r) => ({ name: r[0], reps: Number(r[1]), phone: r[2] ?? "", cities: (r[3] ?? "").split("|").filter(Boolean) }));

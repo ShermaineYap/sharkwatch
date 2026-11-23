@@ -42,5 +42,5 @@ ORDER BY score DESC LIMIT 5;
 
 -- Free help nearby: accredited VSO reps by state, grouped by organisation
 SELECT organization_name, COUNT(*) AS reps, ANY_VALUE(org_phone) AS phone
-FROM VSO_ORG_REPS WHERE rep_state = :state
+FROM VSO_ORG_REPS WHERE COALESCE(rep_state, org_state) = :state
 GROUP BY organization_name ORDER BY reps DESC LIMIT 10;

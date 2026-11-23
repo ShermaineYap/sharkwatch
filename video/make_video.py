@@ -55,7 +55,39 @@ def ass_time(t):
     h = int(t // 3600); m = int(t % 3600 // 60); s = t % 60
     return f"{h}:{m:02d}:{s:05.2f}"
 
+SPOKEN = [  # narration spelling -> caption spelling (longest first)
+    ("thirty eight C F R fourteen point six three six", "38 CFR 14.636"),
+    ("fourteen thousand six hundred and fifty four", "14,654"),
+    ("eighteen thousand seven hundred", "18,700"),
+    ("fourteen thousand six hundred", "14,600"),
+    ("eight thousand seven hundred", "8,700"),
+    ("five thousand two hundred", "5,200"),
+    ("Gemma four, thirty one B", "Gemma 4 31B"),
+    ("twelve thousand dollars", "$12,000"),
+    ("five thousand dollars", "$5,000"),
+    ("ninety four percent", "94%"),
+    ("Gemma four E two B", "Gemma 4 E2B"),
+    ("twenty unit tests", "20 unit tests"),
+    ("twelve percent", "12%"),
+    ("seven hundred", "700"),
+    ("eighty seven", "87"),
+    ("S Q L A P I", "SQL API"),
+    ("H T M L", "HTML"),
+    ("A P I", "API"),
+    ("C P U", "CPU"),
+    ("V S O", "VSO"),
+    ("V F W", "VFW"),
+    ("C F R", "CFR"),
+    ("V A", "VA"),
+    ("A I", "AI"),
+    ("305", "305"),
+]
+def written(text):
+    for a, b in SPOKEN: text = text.replace(a, b)
+    return text
+
 def captions(text, dur, path, left_pad):
+    text = written(text)
     # Split into short chunks; time them by character share.
     sents = re.split(r"(?<=[.!?])\s+", text.strip())
     chunks = []
@@ -91,7 +123,9 @@ with sync_playwright() as pw:
         vid = work / f"s{i}.mp4"; ass = work / f"s{i}.ass"
         if s["kind"] == "slide":
             captions(s["narration"], dur - 0.7, ass, 60)
-            vf = f"scale={W}:{H}:force_original_aspect_ratio=decrease,pad={W}:{H}:(ow-iw)/2:(oh-ih)/2:color=0x1C2A3A,subtitles={ass}"
+            ass.write_text(ass.read_text().replace(",3,14,0,2,60,60,40,1", ",3,14,0,2,60,60,18,1"))
+            # Slide at 90% size at the top, leaving a band underneath for captions.
+            vf = f"scale=1728:972,pad={W}:{H}:96:8:color=0x1C2A3A,subtitles={ass}"
             sh("ffmpeg", "-y", "-loop", "1", "-t", f"{dur:.2f}", "-i", s["image"], "-i", str(wav), "-vf", vf, "-r", "30",
                "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k", "-shortest", str(vid))
         else:
@@ -100,11 +134,19 @@ with sync_playwright() as pw:
             shot = s["shot"]
             iw, ih = map(int, sh("ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height", "-of", "csv=p=0", shot).strip().split(","))
             scale = PHONE_W / iw; win = int(FRAME_H / scale)
-            y0, y1 = [min(max(0, int(v)), max(0, ih - win)) for v in s.get("scroll", [0, 0])]
-            ts, te = s.get("scroll_at", [dur * 0.25, dur * 0.75])
-            ease = f"({y0}+({y1}-{y0})*(1-cos(PI*min(max((t-{ts})/{te - ts:.3f},0),1)))/2)"
+            ymax = max(0, ih - win)
+            keys = s.get("keys") or [[0, 0], [1, 0]]          # [[fraction of duration, y in source px], ...]
+            keys = [[k[0] * dur, min(max(0, int(k[1])), ymax)] for k in keys]
+            def seg(a, b):
+                (ta, ya), (tb, yb) = a, b
+                span = max(tb - ta, 0.01)
+                return f"({ya}+({yb}-{ya})*(1-cos(PI*min(max((t-{ta:.3f})/{span:.3f},0),1)))/2)"
+            ease = seg(keys[-2], keys[-1]) if len(keys) > 1 else str(keys[0][1])
+            for a, b in reversed(list(zip(keys[:-2], keys[1:-1]))):
+                ease = f"if(lt(t,{b[0]:.3f}),{seg(a, b)},{ease})"
+            ease = ease.replace(",", "\\,")
             fc = (f"color=c=0x1C2A3A:s={W}x{H}:d={dur:.2f}[bg];"
-                  f"[0:v]crop={iw}:{win}:0:'{ease}',scale={PHONE_W}:{FRAME_H}[ph];"
+                  f"[0:v]crop={iw}:{win}:0:{ease},scale={PHONE_W}:{FRAME_H}[ph];"
                   f"[1:v]scale=1180:1080[pn];"
                   f"[bg][ph]overlay=80:{FRAME_TOP}[a];[a][pn]overlay=740:0,subtitles={ass}[v]")
             sh("ffmpeg", "-y", "-loop", "1", "-t", f"{dur:.2f}", "-i", shot, "-loop", "1", "-t", f"{dur:.2f}", "-i", str(pnl), "-i", str(wav),
