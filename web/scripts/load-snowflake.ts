@@ -22,7 +22,9 @@ function csv(file: string): string[][] {
 const lit = (v: string) => (v === "" ? "NULL" : `'${v.replace(/'/g, "''")}'`);
 
 // 1. DDL statements (everything before the query examples), one at a time.
-const ddl = schemaSql.split("-- Tier 1")[0].split(";").map((s) => s.replace(/--.*$/gm, "").trim()).filter(Boolean);
+const ddl = schemaSql.split("-- Tier 1")[0].split(";").map((s) => s.replace(/--.*$/gm, "").trim()).filter(Boolean)
+  // Warehouse/database/schema are created once by 00_setup_service_user.sql as ACCOUNTADMIN.
+  .filter((s) => !/^(CREATE (WAREHOUSE|DATABASE|SCHEMA)|USE )/i.test(s));
 for (const s of ddl) { await sql(s); console.log("ok:", s.split("\n")[0].slice(0, 70)); }
 
 // 2. Data, in batches.
