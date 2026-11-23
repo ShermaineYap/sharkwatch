@@ -1,0 +1,490 @@
+{
+ "summary": {
+  "n": 23,
+  "verdict_accuracy": {
+   "gemma": 60.9,
+   "baseline": 69.6
+  },
+  "field_accuracy": {
+   "gemma": {
+    "fee_requested": 78.3,
+    "fee_basis": 56.5,
+    "claim_stage": 47.8,
+    "mult": 14.3
+   },
+   "baseline": {
+    "fee_requested": 78.3,
+    "fee_basis": 73.9,
+    "claim_stage": 60.9,
+    "mult": 85.7
+   }
+  },
+  "false_red_on_legit": {
+   "n": 10,
+   "gemma": 2,
+   "baseline": 2
+  },
+  "red_recall": {
+   "n": 8,
+   "gemma": 5,
+   "baseline": 7
+  },
+  "json_valid": "23/23",
+  "gemma_latency_ms_cpu": {
+   "median": 25166,
+   "max": 34548
+  },
+  "model": "gemma-4-E2B-it Q4_0 (local, llama.cpp)"
+ },
+ "rows": [
+  {
+   "id": "U01",
+   "group": "unaccredited",
+   "expected": "red",
+   "gemma": "red",
+   "baseline": "amber",
+   "app": "red",
+   "ms": 30020,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": false,
+   "b_fee_basis": false,
+   "g_claim_stage": false,
+   "b_claim_stage": true,
+   "g_mult": false,
+   "b_mult": false,
+   "g_flags": [
+    "R2r",
+    "R7a"
+   ]
+  },
+  {
+   "id": "U02",
+   "group": "unaccredited",
+   "expected": "red",
+   "gemma": "red",
+   "baseline": "red",
+   "app": "red",
+   "ms": 27115,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": true,
+   "b_fee_basis": true,
+   "g_claim_stage": false,
+   "b_claim_stage": true,
+   "g_mult": true,
+   "b_mult": true,
+   "g_flags": [
+    "R1r",
+    "R6r",
+    "R7a"
+   ]
+  },
+  {
+   "id": "U03",
+   "group": "unaccredited",
+   "expected": "red",
+   "gemma": "amber",
+   "baseline": "red",
+   "app": "amber",
+   "ms": 23641,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": false,
+   "b_fee_basis": true,
+   "g_claim_stage": true,
+   "b_claim_stage": false,
+   "g_mult": false,
+   "b_mult": true,
+   "g_flags": [
+    "R1a"
+   ]
+  },
+  {
+   "id": "U04",
+   "group": "unaccredited",
+   "expected": "red",
+   "gemma": "red",
+   "baseline": "red",
+   "app": "red",
+   "ms": 25166,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": true,
+   "b_fee_basis": true,
+   "g_claim_stage": true,
+   "b_claim_stage": false,
+   "g_mult": false,
+   "b_mult": true,
+   "g_flags": [
+    "R1r",
+    "R6r",
+    "R7a"
+   ]
+  },
+  {
+   "id": "U05",
+   "group": "unaccredited",
+   "expected": "red",
+   "gemma": "amber",
+   "baseline": "red",
+   "app": "amber",
+   "ms": 24611,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": false,
+   "b_fee_basis": true,
+   "g_claim_stage": true,
+   "b_claim_stage": false,
+   "g_mult": false,
+   "b_mult": true,
+   "g_flags": [
+    "R1a",
+    "R7a"
+   ]
+  },
+  {
+   "id": "U06",
+   "group": "unaccredited",
+   "expected": "red",
+   "gemma": "red",
+   "baseline": "red",
+   "app": "red",
+   "ms": 27976,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": true,
+   "b_fee_basis": true,
+   "g_claim_stage": false,
+   "b_claim_stage": true,
+   "g_mult": false,
+   "b_mult": true,
+   "g_flags": [
+    "R1r",
+    "R6r",
+    "R7a"
+   ]
+  },
+  {
+   "id": "U07",
+   "group": "unaccredited",
+   "expected": "amber",
+   "gemma": "red",
+   "baseline": "amber",
+   "app": "red",
+   "ms": 24770,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": true,
+   "b_fee_basis": true,
+   "g_claim_stage": true,
+   "b_claim_stage": false,
+   "g_flags": [
+    "R2r",
+    "R7a"
+   ]
+  },
+  {
+   "id": "U08",
+   "group": "unaccredited",
+   "expected": "amber",
+   "gemma": "amber",
+   "baseline": "amber",
+   "app": "amber",
+   "ms": 23357,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": false,
+   "b_fee_basis": true,
+   "g_claim_stage": false,
+   "b_claim_stage": true,
+   "g_flags": [
+    "R1a",
+    "R7a"
+   ]
+  },
+  {
+   "id": "U09",
+   "group": "unaccredited",
+   "expected": "insufficient",
+   "gemma": "insufficient",
+   "baseline": "insufficient",
+   "app": "insufficient",
+   "ms": 22943,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": true,
+   "b_fee_basis": true,
+   "g_claim_stage": false,
+   "b_claim_stage": true,
+   "g_flags": []
+  },
+  {
+   "id": "U10",
+   "group": "unaccredited",
+   "expected": "insufficient",
+   "gemma": "green",
+   "baseline": "insufficient",
+   "app": "green",
+   "ms": 23431,
+   "g_fee_requested": false,
+   "b_fee_requested": true,
+   "g_fee_basis": false,
+   "b_fee_basis": true,
+   "g_claim_stage": false,
+   "b_claim_stage": true,
+   "g_flags": []
+  },
+  {
+   "id": "U11",
+   "group": "unaccredited",
+   "expected": "insufficient",
+   "gemma": "green",
+   "baseline": "green",
+   "app": "green",
+   "ms": 24254,
+   "g_fee_requested": false,
+   "b_fee_requested": false,
+   "g_fee_basis": false,
+   "b_fee_basis": true,
+   "g_claim_stage": false,
+   "b_claim_stage": true,
+   "g_flags": []
+  },
+  {
+   "id": "A01",
+   "group": "accredited",
+   "expected": "green",
+   "gemma": "green",
+   "baseline": "red",
+   "app": "green",
+   "ms": 26051,
+   "g_fee_requested": true,
+   "b_fee_requested": false,
+   "g_fee_basis": true,
+   "b_fee_basis": false,
+   "g_claim_stage": true,
+   "b_claim_stage": true,
+   "g_flags": []
+  },
+  {
+   "id": "A02",
+   "group": "accredited",
+   "expected": "amber",
+   "gemma": "amber",
+   "baseline": "amber",
+   "app": "amber",
+   "ms": 34548,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": true,
+   "b_fee_basis": true,
+   "g_claim_stage": true,
+   "b_claim_stage": true,
+   "g_flags": [
+    "R1a",
+    "R7a"
+   ]
+  },
+  {
+   "id": "A03",
+   "group": "accredited",
+   "expected": "amber",
+   "gemma": "red",
+   "baseline": "red",
+   "app": "red",
+   "ms": 26868,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": false,
+   "b_fee_basis": false,
+   "g_claim_stage": false,
+   "b_claim_stage": false,
+   "g_flags": [
+    "R1r",
+    "R3r",
+    "R7a"
+   ]
+  },
+  {
+   "id": "A04",
+   "group": "accredited",
+   "expected": "amber",
+   "gemma": "amber",
+   "baseline": "amber",
+   "app": "amber",
+   "ms": 25888,
+   "g_fee_requested": false,
+   "b_fee_requested": true,
+   "g_fee_basis": false,
+   "b_fee_basis": true,
+   "g_claim_stage": true,
+   "b_claim_stage": true,
+   "roster": {
+    "expected": "attorney",
+    "gemma": [
+     "exact_name_only:attorney"
+    ]
+   },
+   "g_flags": []
+  },
+  {
+   "id": "A05",
+   "group": "accredited",
+   "expected": "amber",
+   "gemma": "amber",
+   "baseline": "insufficient",
+   "app": "amber",
+   "ms": 23216,
+   "g_fee_requested": true,
+   "b_fee_requested": false,
+   "g_fee_basis": true,
+   "b_fee_basis": true,
+   "g_claim_stage": false,
+   "b_claim_stage": false,
+   "g_flags": [
+    "R1a",
+    "R7a"
+   ]
+  },
+  {
+   "id": "A06",
+   "group": "accredited",
+   "expected": "amber",
+   "gemma": "amber",
+   "baseline": "amber",
+   "app": "amber",
+   "ms": 25147,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": true,
+   "b_fee_basis": true,
+   "g_claim_stage": false,
+   "b_claim_stage": false,
+   "roster": {
+    "expected": "attorney",
+    "gemma": [
+     "exact_name_only:attorney",
+     "exact_name_only:attorney"
+    ]
+   },
+   "g_flags": []
+  },
+  {
+   "id": "V01",
+   "group": "vso",
+   "expected": "green",
+   "gemma": "green",
+   "baseline": "green",
+   "app": "green",
+   "ms": 24158,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": true,
+   "b_fee_basis": false,
+   "g_claim_stage": true,
+   "b_claim_stage": false,
+   "g_flags": []
+  },
+  {
+   "id": "V02",
+   "group": "vso",
+   "expected": "green",
+   "gemma": "green",
+   "baseline": "green",
+   "app": "green",
+   "ms": 24739,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": true,
+   "b_fee_basis": false,
+   "g_claim_stage": true,
+   "b_claim_stage": true,
+   "g_flags": []
+  },
+  {
+   "id": "V03",
+   "group": "vso",
+   "expected": "green",
+   "gemma": "insufficient",
+   "baseline": "insufficient",
+   "app": "insufficient",
+   "ms": 26680,
+   "g_fee_requested": false,
+   "b_fee_requested": false,
+   "g_fee_basis": false,
+   "b_fee_basis": false,
+   "g_claim_stage": true,
+   "b_claim_stage": true,
+   "g_flags": []
+  },
+  {
+   "id": "V04",
+   "group": "vso",
+   "expected": "insufficient",
+   "gemma": "red",
+   "baseline": "green",
+   "app": "red",
+   "ms": 27018,
+   "g_fee_requested": false,
+   "b_fee_requested": false,
+   "g_fee_basis": true,
+   "b_fee_basis": true,
+   "g_claim_stage": false,
+   "b_claim_stage": false,
+   "g_flags": [
+    "R1r",
+    "R3r",
+    "R7a"
+   ]
+  },
+  {
+   "id": "X01",
+   "group": "adversarial",
+   "expected": "red",
+   "gemma": "amber",
+   "baseline": "red",
+   "app": "amber",
+   "ms": 26638,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": false,
+   "b_fee_basis": true,
+   "g_claim_stage": false,
+   "b_claim_stage": true,
+   "g_mult": false,
+   "b_mult": true,
+   "g_flags": [
+    "R1a",
+    "R7a"
+   ]
+  },
+  {
+   "id": "X02",
+   "group": "adversarial",
+   "expected": "red",
+   "gemma": "red",
+   "baseline": "red",
+   "app": "red",
+   "ms": 33916,
+   "g_fee_requested": true,
+   "b_fee_requested": true,
+   "g_fee_basis": true,
+   "b_fee_basis": true,
+   "g_claim_stage": true,
+   "b_claim_stage": true,
+   "roster": {
+    "expected": "none_near_miss",
+    "gemma": [
+     "near_miss:attorney"
+    ]
+   },
+   "g_flags": [
+    "R1r",
+    "R3r",
+    "R7a",
+    "R8r"
+   ]
+  }
+ ]
+}

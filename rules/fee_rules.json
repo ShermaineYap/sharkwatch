@@ -1,0 +1,67 @@
+{
+  "source": "38 CFR 14.636, eCFR text current as of 2026-11-19",
+  "source_url": "https://www.ecfr.gov/current/title-38/chapter-I/part-14/section-14.636",
+  "disclaimer": "General information from public regulations, not legal advice.",
+  "rules": [
+    {
+      "id": "R1_ONLY_ACCREDITED_MAY_CHARGE",
+      "cite": "38 CFR 14.636(b)",
+      "plain": "Only VA-accredited agents and attorneys may receive fees for representation on a VA claim.",
+      "trigger": "fee_requested == true AND NOT (verification.status IN ['verified_by_number','exact_name_state'] AND verification.kind IN ['attorney','claims_agent'])",
+      "severity": "red"
+    },
+    {
+      "id": "R2_VSO_NEVER_CHARGES",
+      "cite": "38 CFR 14.636(b)",
+      "plain": "Recognized Veterans Service Organizations and their accredited representatives are not permitted to receive fees.",
+      "trigger": "fee_requested == true AND (verification.kind == 'vso_rep' OR claims_to_be_vso == true)",
+      "severity": "red"
+    },
+    {
+      "id": "R3_NO_FEE_BEFORE_INITIAL_DECISION",
+      "cite": "38 CFR 14.636(c)(1)(i)",
+      "plain": "Agents and attorneys may charge only for representation provided after VA has issued notice of an initial decision on the claim. Help filing a first claim cannot be charged for.",
+      "trigger": "fee_requested == true AND claim_stage IN ['initial_claim','unknown_but_pre_decision']",
+      "severity": "red"
+    },
+    {
+      "id": "R4_FEE_ABOVE_33_PERCENT",
+      "cite": "38 CFR 14.636(f)(1)",
+      "plain": "Fees above 33 1/3 percent of past-due benefits are presumed unreasonable.",
+      "trigger": "fee_percent_of_past_due > 33.34",
+      "severity": "red"
+    },
+    {
+      "id": "R5_FEE_BETWEEN_20_AND_33",
+      "cite": "38 CFR 14.636(f)(1)",
+      "plain": "Fees up to 20 percent of past-due benefits are presumed reasonable. Fees between 20 and 33 1/3 percent are not presumed either way; ask why.",
+      "trigger": "20 < fee_percent_of_past_due <= 33.34",
+      "severity": "amber"
+    },
+    {
+      "id": "R6_FEE_NOT_TIED_TO_PAST_DUE",
+      "cite": "38 CFR 14.636(f)(1), (h)(3)",
+      "plain": "The regulation's reasonableness presumptions are measured against past-due benefits. A fee based on future monthly payments (for example 'five times your monthly increase') falls outside them; ask the representative to explain it in a written agreement.",
+      "trigger": "fee_basis IN ['multiple_of_monthly_increase','percent_of_future_payments','subscription']",
+      "severity": "amber"
+    },
+    {
+      "id": "R7_NO_WRITTEN_AGREEMENT",
+      "cite": "38 CFR 14.636(e), (g)",
+      "plain": "Fees may be fixed, hourly, a percentage, or a mix, but every fee agreement must be in writing, signed by both sides, include the VA file number and fee terms, and be filed with VA within 30 days.",
+      "trigger": "fee_requested == true AND written_agreement_mentioned != 'yes'",
+      "severity": "amber"
+    },
+    {
+      "id": "R8_ASKS_FOR_VA_LOGIN",
+      "cite": "VA guidance on protecting VA.gov sign-in (to confirm and link on Day 2)",
+      "plain": "Never share your VA.gov, ID.me or Login.gov username, password or codes with a helper.",
+      "trigger": "asks_for_va_login == true",
+      "severity": "red"
+    }
+  ],
+  "free_help": {
+    "plain": "Accredited VSO representatives help with VA claims for free.",
+    "cite": "38 CFR 14.636(b); https://www.va.gov/find-rep"
+  }
+}
