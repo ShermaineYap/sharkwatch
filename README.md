@@ -8,6 +8,8 @@
 
 Built for the **305 Veterans Hackathon, November 2026** (GDG at FIU). Competition type: **Technical**.
 
+**Live app:** https://sharkwatch-two.vercel.app · **Demo video (5 min):** https://youtu.be/QhddbM8IJJU · **Feature video:** https://youtu.be/-fjgIPxgP9o · **Slides:** https://docs.google.com/presentation/d/17VZoUjLFoTMFhYZ_yFKW3PsTS5IjOk6o39sW68Wu1l4/edit?usp=sharing
+
 ## Why
 
 Filing a VA claim is free, and accredited Veterans Service Organizations help for free. Yet unaccredited "claim sharks" typically charge veterans upwards of $5,000, often as "5x or 6x your monthly increase" ([KLRD, 2026](https://klrd.gov/2026/03/02/briefing-book-2026-veterans-affairs-claim-sharks/)). There is no federal criminal penalty for it today, so checking for yourself is the main protection. VA's own search only takes a person's name; it cannot read an ad, and it says nothing about the fee.

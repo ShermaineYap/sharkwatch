@@ -1,3 +1,5 @@
+**Try it:** https://sharkwatch-two.vercel.app
+
 ## Inspiration
 
 Filing a VA disability claim is free, and accredited Veterans Service Organizations (VSOs) such as the VFW, DAV and the American Legion help for free. Yet unaccredited companies, often called "claim sharks", typically charge veterans upwards of $5,000 ([Kansas Legislative Research Dept., 2026](https://klrd.gov/2026/03/02/briefing-book-2026-veterans-affairs-claim-sharks/)), usually as "5x or 6x your monthly increase". Only VA-accredited attorneys and claims agents may charge, and never for a first claim (38 CFR 14.636). There is no federal criminal penalty for breaking that rule today, so the main protection is a veteran checking for themselves.
