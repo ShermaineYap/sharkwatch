@@ -1,4 +1,6 @@
-# SharkWatch: submission status (23 Nov 2026, 19:30 MYT)
+# SharkWatch: submission status (24 Nov 2026, 22:10 MYT)
+
+**Devpost: SUBMITTED** (24 Nov 2026). Live app: https://sharkwatch-two.vercel.app
 
 Deadline: Tue 1 Dec 2026, 12:45 pm MYT (30 Nov, 11:45 pm EST).
 
@@ -8,12 +10,10 @@ Deadline: Tue 1 Dec 2026, 12:45 pm MYT (30 Nov, 11:45 pm EST).
 - Study: held-out 94.7% (18/19), 4/4 claim-shark texts caught, 0/13 legitimate texts wrongly red. Dev 87.0%.
 - Videos (YouTube, unlisted, AI disclosure = Yes): 5-min demo https://youtu.be/QhddbM8IJJU; feature (7:26) https://youtu.be/-fjgIPxgP9o. MP4s also in repo /video.
 - Slides: Google Slides (view link) https://docs.google.com/presentation/d/17VZoUjLFoTMFhYZ_yFKW3PsTS5IjOk6o39sW68Wu1l4/edit?usp=sharing ; pptx/pdf in repo /slides.
-- Devpost draft: https://devpost.com/software/sharkwatch (story, tags, gallery, video, links, opt-ins: Session B Snowflake + Session B Gemma). Not submitted.
+- Devpost: https://devpost.com/software/sharkwatch, submitted (story, tags, gallery, video, live link, opt-ins: Session B Snowflake + Session B Gemma). Editable until the deadline.
+- Vercel: project sharkwatch, live at https://sharkwatch-two.vercel.app (currently bundled roster + recorded Gemma output until env vars are added).
 
-## Waiting on Shermaine
-1. Vercel: grant the Vercel GitHub app access to the sharkwatch repo (vercel.com/new, Configure GitHub App).
-2. Vercel env vars, pasted by Shermaine: GEMINI_API_KEY (AI Studio) and the SNOWFLAKE_* values (file supplied in chat).
-3. Add the live URL to Devpost "Try it out" (Claude will do this once deployed).
-4. Devpost: tick the rules agreement and click Submit.
-5. Kaggle Gemma challenge: find this edition's Kaggle page (not publicly listed); write-up ready in submission/kaggle_gemma_writeup.md.
-6. Live demo: date still TBD; must attend live (Presentation and Demo is 1/6 of the score).
+## Still open (optional, before the deadline)
+1. Vercel env vars, pasted by Shermaine (Settings > Environment Variables, then Redeploy): GEMINI_API_KEY from AI Studio, and the SNOWFLAKE_* values from the file supplied in chat. This switches the live app to live Gemma and Snowflake.
+2. Kaggle Gemma challenge: this edition's Kaggle page was not found publicly; write-up ready in submission/kaggle_gemma_writeup.md.
+3. Live demo: date still TBD; must attend live (Presentation and Demo is 1/6 of the score).
